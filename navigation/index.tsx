@@ -1,21 +1,38 @@
-import { Feather, FontAwesome } from "@expo/vector-icons";
-import { Pressable } from "react-native";
-import { NavigationContainer } from "@react-navigation/native";
+import {
+  Feather,
+  MaterialCommunityIcons,
+  FontAwesome,
+} from "@expo/vector-icons";
+import { ColorSchemeName, Pressable } from "react-native";
+import {
+  NavigationContainer,
+  DefaultTheme,
+  DarkTheme,
+} from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
-import TabOneScreen from "../screens/Tab/TabOneScreen";
-import TabTwoScreen from "../screens/Tab/TabTwoScreen";
-import TabThreeScreen from "../screens/Tab/TabThreeScreen";
-import TabFourScreen from "../screens/Tab/TabFourScreen";
-import TabHomesScreen from "../screens/Tab/TabHomeScreen";
+import Colors from "../constants/Colors";
+import useColorScheme from "../hooks/useColorScheme";
+
+import TabTargetScreen from "../screens/Tab/TabTargetScreen";
+import TabFoodScreen from "../screens/Tab/TabFoodScreen";
+import TabStrengthScreen from "../screens/Tab/TabStrengthScreen";
+import TabSpiritScreen from "../screens/Tab/TabSpiritScreen";
+import TabProfileScreen from "../screens/Tab/TabSpiritScreen";
 
 import DetailsScreen from "../screens/DetailsScreen";
-import ModalScreen from "../screens/ModalScreen";
+import ModalSettingsScreen from "../screens/ModalSettingsScreen";
 
-export default function Navigation() {
+export default function Navigation({
+  colorScheme,
+}: {
+  colorScheme: ColorSchemeName;
+}) {
   return (
-    <NavigationContainer>
+    <NavigationContainer
+      theme={colorScheme === "dark" ? DarkTheme : DefaultTheme}
+    >
       <RootNavigator />
     </NavigationContainer>
   );
@@ -25,8 +42,6 @@ export default function Navigation() {
  * A root stack navigator is often used for displaying modals on top of all other content.
  * https://reactnavigation.org/docs/modal
  */
-
-//Icon set - https://icons.expo.fyi/
 
 const Stack = createNativeStackNavigator();
 
@@ -41,7 +56,7 @@ function RootNavigator() {
       <Stack.Screen name="Details" component={DetailsScreen} />
 
       <Stack.Group screenOptions={{ presentation: "modal" }}>
-        <Stack.Screen name="Modal" component={ModalScreen} />
+        <Stack.Screen name="Настройки" component={ModalSettingsScreen} />
       </Stack.Group>
     </Stack.Navigator>
   );
@@ -50,49 +65,74 @@ function RootNavigator() {
 const BottomTab = createBottomTabNavigator();
 
 function BottomTabNavigator() {
+  const colorScheme = useColorScheme();
+
   return (
-    <BottomTab.Navigator initialRouteName="TabOne">
+    <BottomTab.Navigator
+      initialRouteName="TabTargetScreen"
+      screenOptions={{
+        tabBarActiveTintColor: Colors[colorScheme].tint,
+      }}
+    >
       <BottomTab.Screen
-        name="TabOne"
-        component={TabOneScreen}
+        name="Цели"
+        component={TabTargetScreen}
         options={{
-          title: "Tab One",
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          title: "Цели",
+          tabBarIcon: ({ color }) => (
+            <Feather name="check-circle" size={24} color={color} />
+          ),
         }}
       />
       <BottomTab.Screen
-        name="TabTwo"
-        component={TabTwoScreen}
+        name="Питание"
+        component={TabFoodScreen}
         options={{
-          title: "Tab Two",
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          title: "Питание",
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons
+              name="food-fork-drink"
+              size={24}
+              color={color}
+            />
+          ),
         }}
       />
       <BottomTab.Screen
-        name="TabThree"
-        component={TabThreeScreen}
+        name="Сила"
+        component={TabStrengthScreen}
         options={{
-          title: "Tab Three",
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          title: "Сила",
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons
+              name="lightning-bolt-circle"
+              size={24}
+              color={color}
+            />
+          ),
         }}
       />
       <BottomTab.Screen
-        name="TabFour"
-        component={TabFourScreen}
+        name="Дух"
+        component={TabSpiritScreen}
         options={{
-          title: "Tab Four",
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          title: "Дух",
+          tabBarIcon: ({ color }) => (
+            <FontAwesome name="diamond" size={24} color={color} />
+          ),
         }}
       />
       <BottomTab.Screen
-        name="TabHomeScreen"
-        component={TabHomesScreen}
+        name="Профиль"
+        component={TabProfileScreen}
         options={({ navigation }: { navigation: any }) => ({
-          title: "Tab Home",
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          title: "Профиль",
+          tabBarIcon: ({ color }) => (
+            <Feather name="user" size={24} color={color} />
+          ),
           headerRight: () => (
             <Pressable
-              onPress={() => navigation.navigate("Modal")}
+              onPress={() => navigation.navigate("Настройки")}
               style={({ pressed }) => ({
                 opacity: pressed ? 0.5 : 1,
               })}
@@ -107,7 +147,6 @@ function BottomTabNavigator() {
           ),
         })}
       />
-      {/* <Stack.Screen name="Home" component={HomeScreen} /> */}
     </BottomTab.Navigator>
   );
 }

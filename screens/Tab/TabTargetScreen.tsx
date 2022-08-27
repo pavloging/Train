@@ -1,5 +1,5 @@
 import { View, Button } from "react-native";
-import { styles } from "../../modal/main";
+import { styles } from "../../style/main";
 
 export default function TabTargetScreen({ navigation }: { navigation: any }) {
   return (

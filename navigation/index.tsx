@@ -3,36 +3,25 @@ import {
   MaterialCommunityIcons,
   FontAwesome,
 } from "@expo/vector-icons";
-import { ColorSchemeName, Pressable } from "react-native";
-import {
-  NavigationContainer,
-  DefaultTheme,
-  DarkTheme,
-} from "@react-navigation/native";
+import { Pressable } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
-import Colors from "../constants/Colors";
-import useColorScheme from "../hooks/useColorScheme";
+import { customDarkTheme } from "../style/customDarkTheme";
 
 import TabTargetScreen from "../screens/Tab/TabTargetScreen";
 import TabFoodScreen from "../screens/Tab/TabFoodScreen";
 import TabStrengthScreen from "../screens/Tab/TabStrengthScreen";
 import TabSpiritScreen from "../screens/Tab/TabSpiritScreen";
-import TabProfileScreen from "../screens/Tab/TabSpiritScreen";
+import TabProfileScreen from "../screens/Tab/TabProfileScreen";
 
 import DetailsScreen from "../screens/DetailsScreen";
 import ModalSettingsScreen from "../screens/ModalSettingsScreen";
 
-export default function Navigation({
-  colorScheme,
-}: {
-  colorScheme: ColorSchemeName;
-}) {
+export default function Navigation() {
   return (
-    <NavigationContainer
-      theme={colorScheme === "dark" ? DarkTheme : DefaultTheme}
-    >
+    <NavigationContainer theme={customDarkTheme}>
       <RootNavigator />
     </NavigationContainer>
   );
@@ -65,13 +54,11 @@ function RootNavigator() {
 const BottomTab = createBottomTabNavigator();
 
 function BottomTabNavigator() {
-  const colorScheme = useColorScheme();
-
   return (
     <BottomTab.Navigator
       initialRouteName="TabTargetScreen"
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme].tint,
+        tabBarActiveTintColor: "#00FFFF",
       }}
     >
       <BottomTab.Screen
@@ -140,7 +127,7 @@ function BottomTabNavigator() {
               <Feather
                 name="settings"
                 size={24}
-                color="black"
+                color="#00FFFF"
                 style={{ marginRight: 15 }}
               />
             </Pressable>

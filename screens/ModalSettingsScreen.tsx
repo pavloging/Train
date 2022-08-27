@@ -5,7 +5,7 @@ import { useState } from "react";
 import { Switch } from "react-native-paper";
 
 import { Text, View, Button } from "react-native";
-import { styles } from "../modal/main";
+import { styles } from "../style/main";
 
 export default function ModalSettingsScreen({
   navigation,

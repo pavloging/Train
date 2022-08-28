@@ -5,10 +5,14 @@ export const styleTabProfileScreen = StyleSheet.create({
     display: "flex",
     justifyContent: "space-around",
     flexDirection: "row",
+    marginHorizontal: 16,
+    marginTop: 12,
   },
   profile__avatar: {},
   profile__text: {
     justifyContent: "center",
+    marginTop: 12,
+    marginRight: 6,
   },
   profile__title: {
     color: "#DDDDDD",

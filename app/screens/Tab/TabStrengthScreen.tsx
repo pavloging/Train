@@ -1,57 +1,57 @@
 import { View, Image, Text, ScrollView } from "react-native";
-import { styleTabStrengthScreen } from "../../style/Tab/styleTabStrengthScreen";
+import { styleTabImg } from "../../style/Tab/styleTabImg";
 
 export default function TabStrengthScreen({ navigation }: { navigation: any }) {
   return (
-    <ScrollView style={styleTabStrengthScreen.strength}>
-      <View style={styleTabStrengthScreen.strength__pairImages}>
-        <View style={styleTabStrengthScreen.strength__block}>
+    <ScrollView style={styleTabImg.img}>
+      <View style={styleTabImg.img__line}>
+        <View style={styleTabImg.img__box}>
           <Image
-            style={styleTabStrengthScreen.strength__blockImg}
+            style={styleTabImg.img__boxImg}
             source={require("../../assets/images/TabStrengthScreen/biceps.jpg")}
           />
-          <Text style={styleTabStrengthScreen.strength__blockTxt}>Бицепс</Text>
+          <Text style={styleTabImg.img__boxTitle}>Бицепс</Text>
         </View>
-        <View style={styleTabStrengthScreen.strength__block}>
+        <View style={styleTabImg.img__box}>
           <Image
-            style={styleTabStrengthScreen.strength__blockImg}
+            style={styleTabImg.img__boxImg}
             source={require("../../assets/images/TabStrengthScreen/triangularis.jpg")}
           />
-          <Text style={styleTabStrengthScreen.strength__blockTxt}>Трицепс</Text>
+          <Text style={styleTabImg.img__boxTitle}>Трицепс</Text>
         </View>
       </View>
 
-      <View style={styleTabStrengthScreen.strength__pairImages}>
-        <View style={styleTabStrengthScreen.strength__block}>
+      <View style={styleTabImg.img__line}>
+        <View style={styleTabImg.img__box}>
           <Image
-            style={styleTabStrengthScreen.strength__blockImg}
+            style={styleTabImg.img__boxImg}
             source={require("../../assets/images/TabStrengthScreen/back.jpg")}
           />
-          <Text style={styleTabStrengthScreen.strength__blockTxt}>Спина</Text>
+          <Text style={styleTabImg.img__boxTitle}>Спина</Text>
         </View>
-        <View style={styleTabStrengthScreen.strength__block}>
+        <View style={styleTabImg.img__box}>
           <Image
-            style={styleTabStrengthScreen.strength__blockImg}
+            style={styleTabImg.img__boxImg}
             source={require("../../assets/images/TabStrengthScreen/breast.jpg")}
           />
-          <Text style={styleTabStrengthScreen.strength__blockTxt}>Грудь</Text>
+          <Text style={styleTabImg.img__boxTitle}>Грудь</Text>
         </View>
       </View>
 
-      <View style={styleTabStrengthScreen.strength__pairImages}>
-        <View style={styleTabStrengthScreen.strength__block}>
+      <View style={styleTabImg.img__line}>
+        <View style={styleTabImg.img__box}>
           <Image
-            style={styleTabStrengthScreen.strength__blockImg}
+            style={styleTabImg.img__boxImg}
             source={require("../../assets/images/TabStrengthScreen/press.jpg")}
           />
-          <Text style={styleTabStrengthScreen.strength__blockTxt}>Пресс</Text>
+          <Text style={styleTabImg.img__boxTitle}>Пресс</Text>
         </View>
-        <View style={styleTabStrengthScreen.strength__block}>
+        <View style={styleTabImg.img__box}>
           <Image
-            style={styleTabStrengthScreen.strength__blockImg}
+            style={styleTabImg.img__boxImg}
             source={require("../../assets/images/TabStrengthScreen/feet.jpg")}
           />
-          <Text style={styleTabStrengthScreen.strength__blockTxt}>Ноги</Text>
+          <Text style={styleTabImg.img__boxTitle}>Ноги</Text>
         </View>
       </View>
       {/* <Button

@@ -1,76 +1,74 @@
 import { View, Image, Text, ScrollView } from "react-native";
-import { styleTabSpiritScreen } from "../../style/Tab/styleTabSpiritScreen";
+import { styleTabImg } from "../../style/Tab/styleTabImg";
 
 export default function TabSpiritScreen({ navigation }: { navigation: any }) {
   return (
-    <ScrollView style={styleTabSpiritScreen.spirit}>
-      <View style={styleTabSpiritScreen.spirit__pairImages}>
-        <View style={styleTabSpiritScreen.spirit__block}>
+    <ScrollView style={styleTabImg.img}>
+      <View style={styleTabImg.img__line}>
+        <View style={styleTabImg.img__box}>
           <Image
-            style={styleTabSpiritScreen.spirit__blockImg}
+            style={styleTabImg.img__boxImg}
             source={require("../../assets/images/TabSpiritScreen/morning.jpg")}
           />
-          <Text style={styleTabSpiritScreen.spirit__blockTxt}>Утро</Text>
+          <Text style={styleTabImg.img__boxTitle}>Утро</Text>
         </View>
-        <View style={styleTabSpiritScreen.spirit__block}>
+        <View style={styleTabImg.img__box}>
           <Image
-            style={styleTabSpiritScreen.spirit__blockImg}
+            style={styleTabImg.img__boxImg}
             source={require("../../assets/images/TabSpiritScreen/book.jpg")}
           />
-          <Text style={styleTabSpiritScreen.spirit__blockTxt}>Книги</Text>
+          <Text style={styleTabImg.img__boxTitle}>Книги</Text>
         </View>
       </View>
 
-      <View style={styleTabSpiritScreen.spirit__pairImages}>
-        <View style={styleTabSpiritScreen.spirit__block}>
+      <View style={styleTabImg.img__line}>
+        <View style={styleTabImg.img__box}>
           <Image
-            style={styleTabSpiritScreen.spirit__blockImg}
+            style={styleTabImg.img__boxImg}
             source={require("../../assets/images/TabSpiritScreen/motivation.jpg")}
           />
-          <Text style={styleTabSpiritScreen.spirit__blockTxt}>Мотивация</Text>
+          <Text style={styleTabImg.img__boxTitle}>Мотивация</Text>
         </View>
-        <View style={styleTabSpiritScreen.spirit__block}>
+        <View style={styleTabImg.img__box}>
           <Image
-            style={styleTabSpiritScreen.spirit__blockImg}
+            style={styleTabImg.img__boxImg}
             source={require("../../assets/images/TabSpiritScreen/recovery.jpg")}
           />
-          <Text style={styleTabSpiritScreen.spirit__blockTxt}>
-            Восстоновление
-          </Text>
+          <Text style={styleTabImg.img__boxTitle}>Восстоновление</Text>
         </View>
       </View>
 
-      <View style={styleTabSpiritScreen.spirit__pairImages}>
-        <View style={styleTabSpiritScreen.spirit__block}>
+      <View style={styleTabImg.img__line}>
+        <View style={styleTabImg.img__box}>
           <Image
-            style={styleTabSpiritScreen.spirit__blockImg}
+            style={styleTabImg.img__boxImg}
             source={require("../../assets/images/TabSpiritScreen/sleep.jpg")}
           />
-          <Text style={styleTabSpiritScreen.spirit__blockTxt}>Сон</Text>
+          <Text style={styleTabImg.img__boxTitle}>Сон</Text>
         </View>
-        <View style={styleTabSpiritScreen.spirit__block}>
+        <View style={styleTabImg.img__box}>
           <Image
-            style={styleTabSpiritScreen.spirit__blockImg}
+            style={styleTabImg.img__boxImg}
             source={require("../../assets/images/TabSpiritScreen/target.jpg")}
           />
-          <Text style={styleTabSpiritScreen.spirit__blockTxt}>Цели</Text>
+          <Text style={styleTabImg.img__boxTitle}>Цели</Text>
         </View>
       </View>
 
-      <View style={styleTabSpiritScreen.spirit__pairImages}>
-        <View style={styleTabSpiritScreen.spirit__block}>
+      <View style={styleTabImg.img__line}>
+        <View style={styleTabImg.img__box}>
           <Image
-            style={styleTabSpiritScreen.spirit__blockImg}
+            style={styleTabImg.img__boxImg}
             source={require("../../assets/images/TabSpiritScreen/burnout.jpg")}
           />
-          <Text style={styleTabSpiritScreen.spirit__blockTxt}>Выгорание</Text>
+          <Text style={styleTabImg.img__boxTitle}>Выгорание</Text>
         </View>
-        <View style={styleTabSpiritScreen.spirit__block}>
+        <View style={styleTabImg.img__box}>
           <Image
-            style={styleTabSpiritScreen.spirit__blockImg}
+            style={styleTabImg.img__boxImg}
             source={require("../../assets/images/TabSpiritScreen/game.jpg")}
           />
-          <Text style={styleTabSpiritScreen.spirit__blockTxt}>Игры</Text>
+          <Text style={styleTabImg.img__boxTitle}>Игры</Text>
         </View>
       </View>
       {/* <Button

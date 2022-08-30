@@ -1,5 +1,5 @@
 import { View, Text } from "react-native";
-import { styles } from "../style/main";
+import { styles } from "../../style/main";
 
 export default function DetailsScreen() {
   return (

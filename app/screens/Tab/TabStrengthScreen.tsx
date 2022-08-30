@@ -10,6 +10,7 @@ export default function TabStrengthScreen({ navigation }: { navigation: any }) {
           onPress={() => {
             navigation.navigate("Упражнения", {
               otherParam: "Бицепс",
+              linkYouTube: "https://www.youtube.com/watch?v=ElaIKk8ba5g",
             });
           }}
         >
@@ -25,6 +26,7 @@ export default function TabStrengthScreen({ navigation }: { navigation: any }) {
           onPress={() => {
             navigation.navigate("Упражнения", {
               otherParam: "Трицепс",
+              linkYouTube: "https://www.youtube.com/watch?v=ElaIKk8ba5g",
             });
           }}
         >
@@ -46,6 +48,7 @@ export default function TabStrengthScreen({ navigation }: { navigation: any }) {
           onPress={() => {
             navigation.navigate("Упражнения", {
               otherParam: "Спина",
+              linkYouTube: "https://www.youtube.com/watch?v=ElaIKk8ba5g",
             });
           }}
         >
@@ -61,6 +64,7 @@ export default function TabStrengthScreen({ navigation }: { navigation: any }) {
           onPress={() => {
             navigation.navigate("Упражнения", {
               otherParam: "Грудь",
+              linkYouTube: "https://www.youtube.com/watch?v=ElaIKk8ba5g",
             });
           }}
         >
@@ -82,6 +86,7 @@ export default function TabStrengthScreen({ navigation }: { navigation: any }) {
           onPress={() => {
             navigation.navigate("Упражнения", {
               otherParam: "Пресс",
+              linkYouTube: "https://www.youtube.com/watch?v=ElaIKk8ba5g",
             });
           }}
         >
@@ -97,6 +102,7 @@ export default function TabStrengthScreen({ navigation }: { navigation: any }) {
           onPress={() => {
             navigation.navigate("Упражнения", {
               otherParam: "Ноги",
+              linkYouTube: "https://www.youtube.com/watch?v=ElaIKk8ba5g",
             });
           }}
         >

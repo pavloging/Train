@@ -4,4 +4,4 @@
 
 2. Open the camera app on your device and scan the code below.
 
-![QR-code](/assets/expo-go.svg)
+![QR-code](/app/assets/expo-go.svg)

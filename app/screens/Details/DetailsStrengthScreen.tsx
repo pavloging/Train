@@ -7,18 +7,29 @@ import {
   ScrollView,
 } from "react-native";
 import { styleDetailsStrengthScreen } from "../../style/Detalis/styleDetailsStrengthScreen";
+import { AntDesign } from "@expo/vector-icons";
 
 export default function DetailsStrengthScreen({ route }: { route: any }) {
-  const { otherParam, linkYouTube } = route.params;
+  const { navigation, otherParam, linkEasy, linkDifficult, linkHard } =
+    route.params;
   return (
-    <View style={styleDetailsStrengthScreen.img}>
+    <ScrollView style={styleDetailsStrengthScreen.img}>
       <TouchableOpacity
+        style={styleDetailsStrengthScreen.img__box}
         onPress={() => {
-          Linking.openURL(linkYouTube).catch((err) =>
+          Linking.openURL(linkEasy).catch((err) =>
             console.error("An error occurred", err)
           );
         }}
       >
+        <View style={styleDetailsStrengthScreen.img__text}>
+          <Text style={styleDetailsStrengthScreen.img__title}>
+            Уровень сложности
+          </Text>
+          <AntDesign name="star" size={24} color="#00FFFF" />
+          <AntDesign name="staro" size={24} color="#00FFFF" />
+          <AntDesign name="staro" size={24} color="#00FFFF" />
+        </View>
         <Image
           style={styleDetailsStrengthScreen.img__boxImg}
           source={require("../../assets/images/TabStrengthScreen/lvl/easy.jpg")}
@@ -26,12 +37,21 @@ export default function DetailsStrengthScreen({ route }: { route: any }) {
       </TouchableOpacity>
 
       <TouchableOpacity
+        style={styleDetailsStrengthScreen.img__box}
         onPress={() => {
-          Linking.openURL(linkYouTube).catch((err) =>
+          Linking.openURL(linkDifficult).catch((err) =>
             console.error("An error occurred", err)
           );
         }}
       >
+        <View style={styleDetailsStrengthScreen.img__text}>
+          <Text style={styleDetailsStrengthScreen.img__title}>
+            Уровень сложности
+          </Text>
+          <AntDesign name="star" size={24} color="#00FFFF" />
+          <AntDesign name="star" size={24} color="#00FFFF" />
+          <AntDesign name="staro" size={24} color="#00FFFF" />
+        </View>
         <Image
           style={styleDetailsStrengthScreen.img__boxImg}
           source={require("../../assets/images/TabStrengthScreen/lvl/difficult.jpg")}
@@ -39,19 +59,26 @@ export default function DetailsStrengthScreen({ route }: { route: any }) {
       </TouchableOpacity>
 
       <TouchableOpacity
+        style={styleDetailsStrengthScreen.img__box}
         onPress={() => {
-          Linking.openURL(linkYouTube).catch((err) =>
+          Linking.openURL(linkHard).catch((err) =>
             console.error("An error occurred", err)
           );
         }}
       >
+        <View style={styleDetailsStrengthScreen.img__text}>
+          <Text style={styleDetailsStrengthScreen.img__title}>
+            Уровень сложности
+          </Text>
+          <AntDesign name="star" size={24} color="#00FFFF" />
+          <AntDesign name="star" size={24} color="#00FFFF" />
+          <AntDesign name="star" size={24} color="#00FFFF" />
+        </View>
         <Image
           style={styleDetailsStrengthScreen.img__boxImg}
           source={require("../../assets/images/TabStrengthScreen/lvl/hard.jpg")}
         />
       </TouchableOpacity>
-
-      <Text style={styleDetailsStrengthScreen.img__title}>{otherParam}</Text>
-    </View>
+    </ScrollView>
   );
 }

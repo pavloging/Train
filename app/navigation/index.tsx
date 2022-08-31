@@ -19,6 +19,7 @@ import TabProfileScreen from "../screens/Tab/TabProfileScreen";
 import DetailsScreen from "../screens/Details/DetailsScreen";
 import DetailsStrengthScreen from "../screens/Details/DetailsStrengthScreen";
 import ModalSettingsScreen from "../screens/ModalSettingsScreen";
+import DetailsSpiritScreen from "../screens/Details/DetailsSpiritScreen";
 
 export default function Navigation() {
   return (
@@ -39,12 +40,13 @@ function RootNavigator() {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name="Root"
+        name="Назад"
         component={BottomTabNavigator}
         options={{ headerShown: false }}
       />
       <Stack.Screen name="Details" component={DetailsScreen} />
       <Stack.Screen name="Упражнения" component={DetailsStrengthScreen} />
+      <Stack.Screen name="Знания" component={DetailsSpiritScreen} />
 
       <Stack.Group screenOptions={{ presentation: "modal" }}>
         <Stack.Screen name="Настройки" component={ModalSettingsScreen} />

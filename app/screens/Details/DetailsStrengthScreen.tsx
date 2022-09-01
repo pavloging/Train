@@ -8,10 +8,24 @@ import {
 } from "react-native";
 import { styleDetailsStrengthScreen } from "../../style/Detalis/styleDetailsStrengthScreen";
 import { AntDesign } from "@expo/vector-icons";
+import { useEffect } from "react";
 
-export default function DetailsStrengthScreen({ route }: { route: any }) {
-  const { navigation, otherParam, linkEasy, linkDifficult, linkHard } =
-    route.params;
+export default function DetailsStrengthScreen({
+  navigation,
+  route,
+}: {
+  navigation: any;
+  route: any;
+}) {
+  const { headerTitle, linkEasy, linkDifficult, linkHard } = route.params;
+
+  // Rerender after headerTitle change
+  useEffect(() => {
+    navigation.setOptions({
+      title: headerTitle,
+    });
+  }, [headerTitle, navigation]);
+
   return (
     <ScrollView style={styleDetailsStrengthScreen.img}>
       <TouchableOpacity

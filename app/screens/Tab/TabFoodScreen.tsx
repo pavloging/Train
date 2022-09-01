@@ -15,6 +15,15 @@ export default function TabFoodScreen({ navigation }: { navigation: any }) {
           <Text style={styleTabFoodScreen.dataTxt}>17 лет</Text>
         </View>
       </View>
+
+      <View style={styleTabFoodScreen.planFood}>
+        <View style={styleTabFoodScreen.planData}>
+          <Text style={styleTabFoodScreen.planDataTxt}>Сушка</Text>
+        </View>
+        <View style={styleTabFoodScreen.planData}>
+          <Text style={styleTabFoodScreen.planDataTxt}>Масса</Text>
+        </View>
+      </View>
     </View>
   );
 }

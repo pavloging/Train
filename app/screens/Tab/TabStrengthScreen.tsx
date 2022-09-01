@@ -9,7 +9,7 @@ export default function TabStrengthScreen({ navigation }: { navigation: any }) {
           style={styleTabImg.img__box}
           onPress={() => {
             navigation.navigate("Упражнения", {
-              otherParam: "Бицепс",
+              headerTitle: "Бицепс",
               linkEasy: "https://www.youtube.com/watch?v=jvQFha-gCJQ",
               linkDifficult: "https://www.youtube.com/watch?v=2MlZSv6L37k",
               linkHard: "https://www.youtube.com/watch?v=zXLwlRGfCMQ",
@@ -27,7 +27,7 @@ export default function TabStrengthScreen({ navigation }: { navigation: any }) {
           style={styleTabImg.img__box}
           onPress={() => {
             navigation.navigate("Упражнения", {
-              otherParam: "Трицепс",
+              headerTitle: "Трицепс",
               linkEasy: "https://www.youtube.com/watch?v=jvQFha-gCJQ",
               linkDifficult: "https://www.youtube.com/watch?v=2MlZSv6L37k",
               linkHard: "https://www.youtube.com/watch?v=zXLwlRGfCMQ",
@@ -51,7 +51,7 @@ export default function TabStrengthScreen({ navigation }: { navigation: any }) {
           style={styleTabImg.img__box}
           onPress={() => {
             navigation.navigate("Упражнения", {
-              otherParam: "Спина",
+              headerTitle: "Спина",
               linkEasy: "https://www.youtube.com/watch?v=jvQFha-gCJQ",
               linkDifficult: "https://www.youtube.com/watch?v=2MlZSv6L37k",
               linkHard: "https://www.youtube.com/watch?v=zXLwlRGfCMQ",
@@ -69,7 +69,7 @@ export default function TabStrengthScreen({ navigation }: { navigation: any }) {
           style={styleTabImg.img__box}
           onPress={() => {
             navigation.navigate("Упражнения", {
-              otherParam: "Грудь",
+              headerTitle: "Грудь",
               linkEasy: "https://www.youtube.com/watch?v=jvQFha-gCJQ",
               linkDifficult: "https://www.youtube.com/watch?v=2MlZSv6L37k",
               linkHard: "https://www.youtube.com/watch?v=zXLwlRGfCMQ",
@@ -93,7 +93,7 @@ export default function TabStrengthScreen({ navigation }: { navigation: any }) {
           style={styleTabImg.img__box}
           onPress={() => {
             navigation.navigate("Упражнения", {
-              otherParam: "Пресс",
+              headerTitle: "Пресс",
               linkEasy: "https://www.youtube.com/watch?v=jvQFha-gCJQ",
               linkDifficult: "https://www.youtube.com/watch?v=2MlZSv6L37k",
               linkHard: "https://www.youtube.com/watch?v=zXLwlRGfCMQ",
@@ -111,7 +111,7 @@ export default function TabStrengthScreen({ navigation }: { navigation: any }) {
           style={styleTabImg.img__box}
           onPress={() => {
             navigation.navigate("Упражнения", {
-              otherParam: "Ноги",
+              headerTitle: "Ноги",
               linkEasy: "https://www.youtube.com/watch?v=jvQFha-gCJQ",
               linkDifficult: "https://www.youtube.com/watch?v=2MlZSv6L37k",
               linkHard: "https://www.youtube.com/watch?v=zXLwlRGfCMQ",

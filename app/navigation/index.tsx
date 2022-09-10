@@ -44,12 +44,12 @@ function RootNavigator() {
         component={BottomTabNavigator}
         options={{ headerShown: false }}
       />
-      <Stack.Screen name="Details" component={DetalisGuideFood} />
-      <Stack.Screen name="Упражнения" component={DetailsStrength} />
-      <Stack.Screen name="Знания" component={DetailsSpirit} />
+      <Stack.Screen name="GuideFood" component={DetalisGuideFood} />
+      <Stack.Screen name="Strength" component={DetailsStrength} />
+      <Stack.Screen name="Spirit" component={DetailsSpirit} />
 
       <Stack.Group screenOptions={{ presentation: "modal" }}>
-        <Stack.Screen name="Настройки" component={ModalSettings} />
+        <Stack.Screen name="Settings" component={ModalSettings} />
       </Stack.Group>
     </Stack.Navigator>
   );
@@ -123,7 +123,11 @@ function BottomTabNavigator() {
           ),
           headerRight: () => (
             <Pressable
-              onPress={() => navigation.navigate("Настройки")}
+              onPress={() =>
+                navigation.navigate("Settings", {
+                  headerTitle: "Настройки",
+                })
+              }
               style={({ pressed }) => ({
                 opacity: pressed ? 0.5 : 1,
               })}

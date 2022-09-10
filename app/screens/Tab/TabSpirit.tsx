@@ -8,7 +8,7 @@ export default function TabSpiritScreen({ navigation }: { navigation: any }) {
         <TouchableOpacity
           style={styleTabImg.img__box}
           onPress={() => {
-            navigation.navigate("Знания", {
+            navigation.navigate("Spirit", {
               headerTitle: "Утро",
               title:
                 "TrainX поможет выработать привычки, которые помогут правильно начинать свой день, наполнят бодростью, силой и готовностью действовать продуктивно с самого начала дня!",
@@ -38,7 +38,7 @@ export default function TabSpiritScreen({ navigation }: { navigation: any }) {
         <TouchableOpacity
           style={styleTabImg.img__box}
           onPress={() => {
-            navigation.navigate("Знания", {
+            navigation.navigate("Spirit", {
               headerTitle: "Книги",
               title:
                 "TrainX поможет выработать привычки, которые помогут правильно начинать свой день, наполнят бодростью, силой и готовностью действовать продуктивно с самого начала дня!",
@@ -71,7 +71,7 @@ export default function TabSpiritScreen({ navigation }: { navigation: any }) {
         <TouchableOpacity
           style={styleTabImg.img__box}
           onPress={() => {
-            navigation.navigate("Знания", {
+            navigation.navigate("Spirit", {
               headerTitle: "Мотивация",
               title:
                 "TrainX поможет выработать привычки, которые помогут правильно начинать свой день, наполнят бодростью, силой и готовностью действовать продуктивно с самого начала дня!",
@@ -101,7 +101,7 @@ export default function TabSpiritScreen({ navigation }: { navigation: any }) {
         <TouchableOpacity
           style={styleTabImg.img__box}
           onPress={() => {
-            navigation.navigate("Знания", {
+            navigation.navigate("Spirit", {
               headerTitle: "Восстоновление",
               title:
                 "TrainX поможет выработать привычки, которые помогут правильно начинать свой день, наполнят бодростью, силой и готовностью действовать продуктивно с самого начала дня!",
@@ -134,7 +134,7 @@ export default function TabSpiritScreen({ navigation }: { navigation: any }) {
         <TouchableOpacity
           style={styleTabImg.img__box}
           onPress={() => {
-            navigation.navigate("Знания", {
+            navigation.navigate("Spirit", {
               headerTitle: "Сон",
               title:
                 "TrainX поможет выработать привычки, которые помогут правильно начинать свой день, наполнят бодростью, силой и готовностью действовать продуктивно с самого начала дня!",
@@ -164,7 +164,7 @@ export default function TabSpiritScreen({ navigation }: { navigation: any }) {
         <TouchableOpacity
           style={styleTabImg.img__box}
           onPress={() => {
-            navigation.navigate("Знания", {
+            navigation.navigate("Spirit", {
               headerTitle: "Цели",
               title:
                 "TrainX поможет выработать привычки, которые помогут правильно начинать свой день, наполнят бодростью, силой и готовностью действовать продуктивно с самого начала дня!",
@@ -197,7 +197,7 @@ export default function TabSpiritScreen({ navigation }: { navigation: any }) {
         <TouchableOpacity
           style={styleTabImg.img__box}
           onPress={() => {
-            navigation.navigate("Знания", {
+            navigation.navigate("Spirit", {
               headerTitle: "Выгорание",
               title:
                 "TrainX поможет выработать привычки, которые помогут правильно начинать свой день, наполнят бодростью, силой и готовностью действовать продуктивно с самого начала дня!",
@@ -227,7 +227,7 @@ export default function TabSpiritScreen({ navigation }: { navigation: any }) {
         <TouchableOpacity
           style={styleTabImg.img__box}
           onPress={() => {
-            navigation.navigate("Знания", {
+            navigation.navigate("Spirit", {
               headerTitle: "Игры",
               title:
                 "TrainX поможет выработать привычки, которые помогут правильно начинать свой день, наполнят бодростью, силой и готовностью действовать продуктивно с самого начала дня!",

@@ -19,7 +19,7 @@ export default function TabFoodScreen({ navigation }: { navigation: any }) {
       <View style={styleTabFoodScreen.planFood}>
         <TouchableOpacity
           onPress={() => {
-            navigation.navigate("Знания", {
+            navigation.navigate("GuideFood", {
               headerTitle: "Сушка",
             });
           }}
@@ -29,7 +29,7 @@ export default function TabFoodScreen({ navigation }: { navigation: any }) {
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => {
-            navigation.navigate("Знания", {
+            navigation.navigate("GuideFood", {
               headerTitle: "Масса",
             });
           }}

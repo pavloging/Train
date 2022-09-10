@@ -8,7 +8,7 @@ export default function TabStrengthScreen({ navigation }: { navigation: any }) {
         <TouchableOpacity
           style={styleTabImg.img__box}
           onPress={() => {
-            navigation.navigate("Упражнения", {
+            navigation.navigate("Strength", {
               headerTitle: "Бицепс",
               linkEasy: "https://www.youtube.com/watch?v=jvQFha-gCJQ",
               linkDifficult: "https://www.youtube.com/watch?v=2MlZSv6L37k",
@@ -26,7 +26,7 @@ export default function TabStrengthScreen({ navigation }: { navigation: any }) {
         <TouchableOpacity
           style={styleTabImg.img__box}
           onPress={() => {
-            navigation.navigate("Упражнения", {
+            navigation.navigate("Strength", {
               headerTitle: "Трицепс",
               linkEasy: "https://www.youtube.com/watch?v=jvQFha-gCJQ",
               linkDifficult: "https://www.youtube.com/watch?v=2MlZSv6L37k",
@@ -50,7 +50,7 @@ export default function TabStrengthScreen({ navigation }: { navigation: any }) {
         <TouchableOpacity
           style={styleTabImg.img__box}
           onPress={() => {
-            navigation.navigate("Упражнения", {
+            navigation.navigate("Strength", {
               headerTitle: "Спина",
               linkEasy: "https://www.youtube.com/watch?v=jvQFha-gCJQ",
               linkDifficult: "https://www.youtube.com/watch?v=2MlZSv6L37k",
@@ -68,7 +68,7 @@ export default function TabStrengthScreen({ navigation }: { navigation: any }) {
         <TouchableOpacity
           style={styleTabImg.img__box}
           onPress={() => {
-            navigation.navigate("Упражнения", {
+            navigation.navigate("Strength", {
               headerTitle: "Грудь",
               linkEasy: "https://www.youtube.com/watch?v=jvQFha-gCJQ",
               linkDifficult: "https://www.youtube.com/watch?v=2MlZSv6L37k",
@@ -92,7 +92,7 @@ export default function TabStrengthScreen({ navigation }: { navigation: any }) {
         <TouchableOpacity
           style={styleTabImg.img__box}
           onPress={() => {
-            navigation.navigate("Упражнения", {
+            navigation.navigate("Strength", {
               headerTitle: "Пресс",
               linkEasy: "https://www.youtube.com/watch?v=jvQFha-gCJQ",
               linkDifficult: "https://www.youtube.com/watch?v=2MlZSv6L37k",
@@ -110,7 +110,7 @@ export default function TabStrengthScreen({ navigation }: { navigation: any }) {
         <TouchableOpacity
           style={styleTabImg.img__box}
           onPress={() => {
-            navigation.navigate("Упражнения", {
+            navigation.navigate("Strength", {
               headerTitle: "Ноги",
               linkEasy: "https://www.youtube.com/watch?v=jvQFha-gCJQ",
               linkDifficult: "https://www.youtube.com/watch?v=2MlZSv6L37k",

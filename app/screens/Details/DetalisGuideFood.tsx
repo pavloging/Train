@@ -1,10 +1,10 @@
 import { View, Text } from "react-native";
 import { StyleSheet } from "react-native";
 
-export default function DetailsScreen() {
+export default function DetalisGuideFood() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>DetailsScreen</Text>
+      <Text style={styles.title}>DetalisGuideFood</Text>
     </View>
   );
 }

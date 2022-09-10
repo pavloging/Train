@@ -1,5 +1,5 @@
 import { View, Text, Button } from "react-native";
-import { styleTabProfileScreen } from "../../style/Tab/styleTabProfileScreen";
+import { styleTabProfileScreen } from "../../style/Tab/styleTabProfile";
 import { Avatar, Divider } from "react-native-paper";
 import { Feather } from "@expo/vector-icons";
 

@@ -8,18 +8,18 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
-import { customDarkTheme } from "../style/customDarkTheme";
+import { customDarkTheme } from "../style/etc/customDarkTheme";
 
-import TabTargetScreen from "../screens/Tab/TabTargetScreen";
-import TabFoodScreen from "../screens/Tab/TabFoodScreen";
-import TabStrengthScreen from "../screens/Tab/TabStrengthScreen";
-import TabSpiritScreen from "../screens/Tab/TabSpiritScreen";
-import TabProfileScreen from "../screens/Tab/TabProfileScreen";
+import TabTarget from "../screens/Tab/TabTarget";
+import TabFood from "../screens/Tab/TabFood";
+import TabStrength from "../screens/Tab/TabStrength";
+import TabSpirit from "../screens/Tab/TabSpirit";
+import TabProfile from "../screens/Tab/TabProfile";
 
-import DetailsScreen from "../screens/Details/DetailsScreen";
-import DetailsStrengthScreen from "../screens/Details/DetailsStrengthScreen";
-import ModalSettingsScreen from "../screens/ModalSettingsScreen";
-import DetailsSpiritScreen from "../screens/Details/DetailsSpiritScreen";
+import DetalisGuideFood from "../screens/Details/DetalisGuideFood";
+import DetailsStrength from "../screens/Details/DetailsStrength";
+import ModalSettings from "../screens/ModalSettings";
+import DetailsSpirit from "../screens/Details/DetailsSpirit";
 
 export default function Navigation() {
   return (
@@ -44,12 +44,12 @@ function RootNavigator() {
         component={BottomTabNavigator}
         options={{ headerShown: false }}
       />
-      <Stack.Screen name="Details" component={DetailsScreen} />
-      <Stack.Screen name="Упражнения" component={DetailsStrengthScreen} />
-      <Stack.Screen name="Знания" component={DetailsSpiritScreen} />
+      <Stack.Screen name="Details" component={DetalisGuideFood} />
+      <Stack.Screen name="Упражнения" component={DetailsStrength} />
+      <Stack.Screen name="Знания" component={DetailsSpirit} />
 
       <Stack.Group screenOptions={{ presentation: "modal" }}>
-        <Stack.Screen name="Настройки" component={ModalSettingsScreen} />
+        <Stack.Screen name="Настройки" component={ModalSettings} />
       </Stack.Group>
     </Stack.Navigator>
   );
@@ -60,14 +60,14 @@ const BottomTab = createBottomTabNavigator();
 function BottomTabNavigator() {
   return (
     <BottomTab.Navigator
-      initialRouteName="TabTargetScreen"
+      initialRouteName="TabTarget"
       screenOptions={{
         tabBarActiveTintColor: "#00FFFF",
       }}
     >
       <BottomTab.Screen
         name="Цели"
-        component={TabTargetScreen}
+        component={TabTarget}
         options={{
           title: "Цели",
           tabBarIcon: ({ color }) => (
@@ -77,7 +77,7 @@ function BottomTabNavigator() {
       />
       <BottomTab.Screen
         name="Питание"
-        component={TabFoodScreen}
+        component={TabFood}
         options={{
           title: "Питание",
           tabBarIcon: ({ color }) => (
@@ -91,7 +91,7 @@ function BottomTabNavigator() {
       />
       <BottomTab.Screen
         name="Сила"
-        component={TabStrengthScreen}
+        component={TabStrength}
         options={{
           title: "Сила",
           tabBarIcon: ({ color }) => (
@@ -105,7 +105,7 @@ function BottomTabNavigator() {
       />
       <BottomTab.Screen
         name="Дух"
-        component={TabSpiritScreen}
+        component={TabSpirit}
         options={{
           title: "Дух",
           tabBarIcon: ({ color }) => (
@@ -115,7 +115,7 @@ function BottomTabNavigator() {
       />
       <BottomTab.Screen
         name="Профиль"
-        component={TabProfileScreen}
+        component={TabProfile}
         options={({ navigation }: { navigation: any }) => ({
           title: "Профиль",
           tabBarIcon: ({ color }) => (

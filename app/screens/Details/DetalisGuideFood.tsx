@@ -1,4 +1,13 @@
+import { View, Text } from "react-native";
 import { StyleSheet } from "react-native";
+
+export default function DetailsScreen() {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.title}>DetailsScreen</Text>
+    </View>
+  );
+}
 
 export const styles = StyleSheet.create({
   container: {

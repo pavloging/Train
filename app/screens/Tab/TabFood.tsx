@@ -1,5 +1,5 @@
-import { View, Button, Text } from "react-native";
-import { styleTabFoodScreen } from "../../style/Tab/styleTabFoodScreen";
+import { View, TouchableOpacity, Text } from "react-native";
+import { styleTabFoodScreen } from "../../style/Tab/styleTabFood";
 
 export default function TabFoodScreen({ navigation }: { navigation: any }) {
   return (
@@ -17,12 +17,26 @@ export default function TabFoodScreen({ navigation }: { navigation: any }) {
       </View>
 
       <View style={styleTabFoodScreen.planFood}>
-        <View style={styleTabFoodScreen.planData}>
+        <TouchableOpacity
+          onPress={() => {
+            navigation.navigate("Знания", {
+              headerTitle: "Сушка",
+            });
+          }}
+          style={styleTabFoodScreen.planData}
+        >
           <Text style={styleTabFoodScreen.planDataTxt}>Сушка</Text>
-        </View>
-        <View style={styleTabFoodScreen.planData}>
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => {
+            navigation.navigate("Знания", {
+              headerTitle: "Масса",
+            });
+          }}
+          style={styleTabFoodScreen.planData}
+        >
           <Text style={styleTabFoodScreen.planDataTxt}>Масса</Text>
-        </View>
+        </TouchableOpacity>
       </View>
     </View>
   );

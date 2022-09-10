@@ -6,7 +6,7 @@ import {
   Image,
   ScrollView,
 } from "react-native";
-import { styleDetailsStrengthScreen } from "../../style/Detalis/styleDetailsStrengthScreen";
+import { styleDetailsStrengthScreen } from "../../style/Detalis/styleDetailsStrength";
 import { AntDesign } from "@expo/vector-icons";
 import { useEffect } from "react";
 

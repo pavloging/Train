@@ -28,6 +28,20 @@ import { StyleSheet } from "react-native";
 
 export const styleTabFoodScreen = StyleSheet.create({
   food: {},
+  name: {
+    width: "100%",
+    paddingVertical: 12,
+    backgroundColor: "#2C2D31",
+    borderWidth: 2,
+    borderColor: "#1F1F1F",
+  },
+  nameInput: {
+    paddingVertical: 6,
+    textAlign: "center",
+    color: "#DDD",
+    fontSize: 14,
+    minHeight: "5%",
+  },
 
   humanData: {
     flexDirection: "row",
@@ -38,6 +52,15 @@ export const styleTabFoodScreen = StyleSheet.create({
     backgroundColor: "#2C2D31",
     borderWidth: 2,
     borderColor: "#1F1F1F",
+  },
+  dataInput: {
+    position: "relative",
+    top: "35%",
+    textAlign: "center",
+    color: "#DDD",
+    fontSize: 14,
+    backgroundColor: "#1F1F1F",
+    minHeight: "5%",
   },
   dataTxt: {
     position: "relative",

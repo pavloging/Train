@@ -22,7 +22,7 @@ export const styleTabFoodScreen = StyleSheet.create({
   },
   data: {
     width: "33.333%",
-    minHeight: "35%",
+    minHeight: "25%",
     backgroundColor: "#2C2D31",
     borderWidth: 2,
     borderColor: "#1F1F1F",
@@ -49,7 +49,7 @@ export const styleTabFoodScreen = StyleSheet.create({
   },
   planData: {
     width: "50%",
-    minHeight: "25%",
+    minHeight: "18%",
     backgroundColor: "#2C2D31",
     borderWidth: 2,
     borderColor: "#1F1F1F",
@@ -57,6 +57,43 @@ export const styleTabFoodScreen = StyleSheet.create({
   planDataTxt: {
     position: "relative",
     top: "40%",
+    textAlign: "center",
+    color: "#DDD",
+    fontSize: 14,
+  },
+
+  timetableFood: {},
+  timetableFoodLink: {
+    display: "flex",
+    justifyContent: "center",
+    minHeight: "12%",
+    backgroundColor: "#2C2D31",
+    borderWidth: 2,
+    borderColor: "#1F1F1F",
+  },
+  timetableFoodTxt: {
+    textAlign: "center",
+    color: "#DDD",
+    fontSize: 14,
+  },
+
+  balanceLink: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    minHeight: "12%",
+    backgroundColor: "#2C2D31",
+    borderWidth: 2,
+    borderColor: "#1F1F1F",
+  },
+  balanceMinus: {
+    marginRight: 12,
+  },
+  balancePlus: {
+    marginLeft: 12,
+  },
+  balanceTxt: {
     textAlign: "center",
     color: "#DDD",
     fontSize: 14,

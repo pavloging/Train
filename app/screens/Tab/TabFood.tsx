@@ -1,3 +1,6 @@
+import { AntDesign } from "@expo/vector-icons";
+import { useState } from "react";
+import { styleTabFoodScreen } from "../../style/Tab/styleTabFood";
 import {
   View,
   TouchableOpacity,
@@ -5,11 +8,13 @@ import {
   TextInput,
   Keyboard,
 } from "react-native";
-import { styleTabFoodScreen } from "../../style/Tab/styleTabFood";
 import { Observer } from "mobx-react";
 import counter from "../../store/counter";
 
 export default function TabFoodScreen({ navigation }: { navigation: any }) {
+  const colorIcon = "#00FFFF";
+  const [protein, setProtein] = useState(0);
+  const [water, setWater] = useState(0);
   return (
     <Observer>
       {() => (
@@ -103,6 +108,61 @@ export default function TabFoodScreen({ navigation }: { navigation: any }) {
             >
               <Text style={styleTabFoodScreen.planDataTxt}>Масса</Text>
             </TouchableOpacity>
+          </View>
+
+          <View style={styleTabFoodScreen.timetableFood}>
+            <TouchableOpacity
+              onPress={() => {
+                navigation.navigate("TimetableFood", {
+                  headerTitle: "Сушка",
+                });
+              }}
+              style={styleTabFoodScreen.timetableFoodLink}
+            >
+              <Text style={styleTabFoodScreen.timetableFoodTxt}>
+                Расписание приема пищи
+              </Text>
+            </TouchableOpacity>
+          </View>
+
+          <View style={styleTabFoodScreen.balanceLink}>
+            <AntDesign
+              style={styleTabFoodScreen.balanceMinus}
+              name="minuscircle"
+              size={24}
+              color={colorIcon}
+              onPress={() => setProtein((prev) => prev - 5)}
+            />
+            <Text style={styleTabFoodScreen.balanceTxt}>
+              Баланс белка: {protein} г
+            </Text>
+            <AntDesign
+              style={styleTabFoodScreen.balancePlus}
+              name="pluscircle"
+              size={24}
+              color={colorIcon}
+              onPress={() => setProtein((prev) => prev + 5)}
+            />
+          </View>
+
+          <View style={styleTabFoodScreen.balanceLink}>
+            <AntDesign
+              style={styleTabFoodScreen.balanceMinus}
+              name="minuscircle"
+              size={24}
+              color={colorIcon}
+              onPress={() => setWater((prev) => prev + 0.5)}
+            />
+            <Text style={styleTabFoodScreen.balanceTxt}>
+              Баланс воды: {water} л
+            </Text>
+            <AntDesign
+              style={styleTabFoodScreen.balancePlus}
+              name="pluscircle"
+              size={24}
+              color={colorIcon}
+              onPress={() => setWater((prev) => prev + 0.5)}
+            />
           </View>
         </View>
       )}

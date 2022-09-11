@@ -18,7 +18,7 @@ export default function TabTargetScreen({ navigation }: { navigation: any }) {
   const [lists, setLists] = useState<Array<TabTargetScreenListsType>>([
     {
       id: 1,
-      name: "Цели на 2022",
+      name: "Ввести данные в приложение TrainX",
       goals: [
         { id: 1, name: "Сходить подстричься" },
         { id: 2, name: "Убраться" },
@@ -26,7 +26,7 @@ export default function TabTargetScreen({ navigation }: { navigation: any }) {
     },
     {
       id: 2,
-      name: "RD",
+      name: "Потренироваться по прогрограмме TrainX",
       goals: [
         { id: 1, name: "Сходить подстричься" },
         { id: 2, name: "Убраться" },
@@ -34,7 +34,15 @@ export default function TabTargetScreen({ navigation }: { navigation: any }) {
     },
     {
       id: 3,
-      name: "Gum",
+      name: "Выбрать план питания Сушка/Масса",
+      goals: [
+        { id: 1, name: "Сходить подстричься" },
+        { id: 2, name: "Убраться" },
+      ],
+    },
+    {
+      id: 4,
+      name: "Создать новую цель в приложении",
       goals: [
         { id: 1, name: "Сходить подстричься" },
         { id: 2, name: "Убраться" },

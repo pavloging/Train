@@ -17,9 +17,11 @@ import TabSpirit from "../screens/Tab/TabSpirit";
 import TabProfile from "../screens/Tab/TabProfile";
 
 import DetalisGuideFood from "../screens/Details/DetalisGuideFood";
+import DetalisTimetableFood from "../screens/Details/DetalisTimetableFood";
 import DetailsStrength from "../screens/Details/DetailsStrength";
-import ModalSettings from "../screens/ModalSettings";
 import DetailsSpirit from "../screens/Details/DetailsSpirit";
+
+import ModalSettings from "../screens/ModalSettings";
 
 export default function Navigation() {
   return (
@@ -45,6 +47,7 @@ function RootNavigator() {
         options={{ headerShown: false }}
       />
       <Stack.Screen name="GuideFood" component={DetalisGuideFood} />
+      <Stack.Screen name="TimetableFood" component={DetalisTimetableFood} />
       <Stack.Screen name="Strength" component={DetailsStrength} />
       <Stack.Screen name="Spirit" component={DetailsSpirit} />
 

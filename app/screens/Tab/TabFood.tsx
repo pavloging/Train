@@ -7,6 +7,7 @@ import {
   Text,
   TextInput,
   Keyboard,
+  Alert,
 } from "react-native";
 import { Observer } from "mobx-react";
 import counter from "../../store/counter";
@@ -15,6 +16,23 @@ export default function TabFoodScreen({ navigation }: { navigation: any }) {
   const colorIcon = "#00FFFF";
   const [protein, setProtein] = useState(0);
   const [water, setWater] = useState(0);
+
+  function validate() {
+    if (
+      counter.name !== "" &&
+      counter.growth !== "" &&
+      counter.weight !== "" &&
+      counter.age !== ""
+    ) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  function viewAlert() {
+    Alert.alert("Заполните данные для создания программы");
+  }
   return (
     <Observer>
       {() => (
@@ -30,10 +48,9 @@ export default function TabFoodScreen({ navigation }: { navigation: any }) {
               onChangeText={(text) => counter.changeName(text)}
               placeholder="Моё имя"
               value={`${counter.name}`}
-              autoFocus={true}
+              autoFocus={counter.name === "" && true}
               maxLength={14}
             />
-            {/* <Text style={styleTabFoodScreen.dataTxt}>идет к цели</Text> */}
           </TouchableOpacity>
 
           <View style={styleTabFoodScreen.humanData}>
@@ -89,21 +106,25 @@ export default function TabFoodScreen({ navigation }: { navigation: any }) {
 
           <View style={styleTabFoodScreen.planFood}>
             <TouchableOpacity
-              onPress={() => {
-                navigation.navigate("GuideFood", {
-                  headerTitle: "Сушка",
-                });
-              }}
+              onPress={() =>
+                validate()
+                  ? navigation.navigate("GuideFood", {
+                      headerTitle: "Сушка",
+                    })
+                  : viewAlert()
+              }
               style={styleTabFoodScreen.planData}
             >
               <Text style={styleTabFoodScreen.planDataTxt}>Сушка</Text>
             </TouchableOpacity>
             <TouchableOpacity
-              onPress={() => {
-                navigation.navigate("GuideFood", {
-                  headerTitle: "Масса",
-                });
-              }}
+              onPress={() =>
+                validate()
+                  ? navigation.navigate("GuideFood", {
+                      headerTitle: "Масса",
+                    })
+                  : viewAlert()
+              }
               style={styleTabFoodScreen.planData}
             >
               <Text style={styleTabFoodScreen.planDataTxt}>Масса</Text>
@@ -114,7 +135,7 @@ export default function TabFoodScreen({ navigation }: { navigation: any }) {
             <TouchableOpacity
               onPress={() => {
                 navigation.navigate("TimetableFood", {
-                  headerTitle: "Сушка",
+                  headerTitle: "Расписание приема пищи",
                 });
               }}
               style={styleTabFoodScreen.timetableFoodLink}
@@ -131,7 +152,13 @@ export default function TabFoodScreen({ navigation }: { navigation: any }) {
               name="minuscircle"
               size={24}
               color={colorIcon}
-              onPress={() => setProtein((prev) => prev - 5)}
+              onPress={() =>
+                validate()
+                  ? protein > 0
+                    ? setProtein((prev) => prev - 5)
+                    : null
+                  : viewAlert()
+              }
             />
             <Text style={styleTabFoodScreen.balanceTxt}>
               Баланс белка: {protein} г
@@ -141,7 +168,9 @@ export default function TabFoodScreen({ navigation }: { navigation: any }) {
               name="pluscircle"
               size={24}
               color={colorIcon}
-              onPress={() => setProtein((prev) => prev + 5)}
+              onPress={() =>
+                validate() ? setProtein((prev) => prev + 5) : viewAlert()
+              }
             />
           </View>
 
@@ -151,7 +180,13 @@ export default function TabFoodScreen({ navigation }: { navigation: any }) {
               name="minuscircle"
               size={24}
               color={colorIcon}
-              onPress={() => setWater((prev) => prev + 0.5)}
+              onPress={() =>
+                validate()
+                  ? water > 0
+                    ? setWater((prev) => prev - 0.5)
+                    : null
+                  : viewAlert()
+              }
             />
             <Text style={styleTabFoodScreen.balanceTxt}>
               Баланс воды: {water} л
@@ -161,7 +196,9 @@ export default function TabFoodScreen({ navigation }: { navigation: any }) {
               name="pluscircle"
               size={24}
               color={colorIcon}
-              onPress={() => setWater((prev) => prev + 0.5)}
+              onPress={() =>
+                validate() ? setWater((prev) => prev + 0.5) : viewAlert()
+              }
             />
           </View>
         </View>

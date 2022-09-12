@@ -4,7 +4,3 @@ export interface TabTargetScreenListsType {
   goals?: Array<Object>;
 }
 // не обяз - ?
-
-export interface ListType {
-  onChangeText?: ((text: string) => void) | undefined;
-}

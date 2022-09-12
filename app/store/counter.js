@@ -5,6 +5,7 @@ class Counter {
   growth = "";
   weight = "";
   age = "";
+  gender = "male";
   constructor() {
     makeAutoObservable(this);
   }

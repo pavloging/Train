@@ -2,6 +2,7 @@ import { View, Text, Image, ScrollView, TouchableOpacity } from "react-native";
 import { StyleSheet } from "react-native";
 import { useEffect } from "react";
 import { Divider } from "react-native-paper";
+import counter from "../../store/counter";
 
 export default function DetalisGuideFood({
   navigation,
@@ -28,6 +29,57 @@ export default function DetalisGuideFood({
       title: headerTitle,
     });
   }, [headerTitle, navigation]);
+
+  console.log("Формула для похудения:");
+
+  function caloriesDrying(x: number) {
+    if (counter.gender === "male") {
+      const calories =
+        (10 * counter.weight + 6.25 * counter.growth - 5 * counter.age + 5) *
+        1.55;
+      if (x === 1) return Math.round(calories / 1.15);
+      if (x === 2) return Math.round(calories / 1.3);
+      if (x === 3) return Math.round(calories / 1.6);
+    } else {
+      const calories =
+        (10 * counter.weight + 6.25 * counter.growth - 5 * counter.age - 161) *
+        1.55;
+      if (x === 1) return Math.round(calories / 1.15);
+      if (x === 2) return Math.round(calories / 1.3);
+      if (x === 3) return Math.round(calories / 1.6);
+    }
+  }
+
+  console.log(caloriesDrying(1));
+
+  console.log(caloriesDrying(2));
+
+  console.log(caloriesDrying(3));
+
+  function caloriesWeight(x: number) {
+    if (counter.gender === "male") {
+      const calories =
+        (10 * counter.weight + 6.25 * counter.growth - 5 * counter.age + 5) *
+        1.55;
+      if (x === 1) return Math.round(calories * 1.1);
+      if (x === 2) return Math.round(calories * 1.25);
+      if (x === 3) return Math.round(calories * 1.4);
+    } else {
+      const calories =
+        (10 * counter.weight + 6.25 * counter.growth - 5 * counter.age - 161) *
+        1.55;
+      if (x === 1) return Math.round(calories * 1.1);
+      if (x === 2) return Math.round(calories * 1.25);
+      if (x === 3) return Math.round(calories * 1.4);
+    }
+  }
+
+  console.log(caloriesWeight(1));
+
+  console.log(caloriesWeight(2));
+
+  console.log(caloriesWeight(3));
+
   return (
     <ScrollView>
       {whichTab() ? (
@@ -44,19 +96,27 @@ export default function DetalisGuideFood({
       {whichTab() ? (
         <View style={styles.clac}>
           <Text style={styles.clacTitle}>Калькулятор каллорий</Text>
-          <Text style={styles.clacText}>Норма в день: 2458 ккал</Text>
-          <Text style={styles.clacText}>Норма в день для сушки: 1966 ккал</Text>
           <Text style={styles.clacText}>
-            Норма в день для быстрой сушки: 1475 ккал
+            Норма в день: {caloriesDrying(1)} ккал
+          </Text>
+          <Text style={styles.clacText}>
+            Норма в день для сушки: {caloriesDrying(2)} ккал
+          </Text>
+          <Text style={styles.clacText}>
+            Норма в день для быстрой сушки: {caloriesDrying(3)} ккал
           </Text>
         </View>
       ) : (
         <View style={styles.clac}>
           <Text style={styles.clacTitle}>Калькулятор каллорий</Text>
-          <Text style={styles.clacText}>Норма в день: 3012 ккал</Text>
-          <Text style={styles.clacText}>Норма в день для массы: 3392 ккал</Text>
           <Text style={styles.clacText}>
-            Норма в день для быстрой массы: 3773 ккал
+            Норма в день: {caloriesWeight(1)} ккал
+          </Text>
+          <Text style={styles.clacText}>
+            Норма в день для массы: {caloriesWeight(2)} ккал
+          </Text>
+          <Text style={styles.clacText}>
+            Норма в день для быстрой массы: {caloriesWeight(3)} ккал
           </Text>
         </View>
       )}

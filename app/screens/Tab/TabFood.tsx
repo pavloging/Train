@@ -155,7 +155,7 @@ export default function TabFoodScreen({ navigation }: { navigation: any }) {
               onPress={() =>
                 validate()
                   ? protein > 0
-                    ? setProtein((prev) => prev - 5)
+                    ? setProtein((prev) => prev - 10)
                     : null
                   : viewAlert()
               }
@@ -169,7 +169,13 @@ export default function TabFoodScreen({ navigation }: { navigation: any }) {
               size={24}
               color={colorIcon}
               onPress={() =>
-                validate() ? setProtein((prev) => prev + 5) : viewAlert()
+                validate()
+                  ? counter.weight * 1.6 > protein
+                    ? setProtein((prev) => prev + 10)
+                    : Alert.alert(
+                        "Вы достаточно употребили белка в суточной норме"
+                      )
+                  : viewAlert()
               }
             />
           </View>
@@ -183,7 +189,7 @@ export default function TabFoodScreen({ navigation }: { navigation: any }) {
               onPress={() =>
                 validate()
                   ? water > 0
-                    ? setWater((prev) => prev - 0.5)
+                    ? setWater((prev) => prev - 0.25)
                     : null
                   : viewAlert()
               }
@@ -197,7 +203,11 @@ export default function TabFoodScreen({ navigation }: { navigation: any }) {
               size={24}
               color={colorIcon}
               onPress={() =>
-                validate() ? setWater((prev) => prev + 0.5) : viewAlert()
+                validate()
+                  ? (counter.weight * 30) / 1000 > water
+                    ? setWater((prev) => prev + 0.25)
+                    : Alert.alert("Вы выпили достаточно воды на сегодня")
+                  : viewAlert()
               }
             />
           </View>

@@ -81,7 +81,7 @@ export default function DetalisGuideFood({
   console.log(caloriesWeight(3));
 
   return (
-    <ScrollView>
+    <ScrollView style={styles.guideFood}>
       {whichTab() ? (
         <Image
           style={styles.image}
@@ -164,7 +164,7 @@ export default function DetalisGuideFood({
           <View style={styles.mealDishСolumnLast}>
             <TouchableOpacity>
               <Image
-                style={styles.mealImageLast}
+                style={styles.mealImage}
                 source={require("../../assets/images/DetalisGuideFood/dish/dinner.jpg")}
               />
               <Text style={styles.mealText}>Ужин</Text>
@@ -177,6 +177,9 @@ export default function DetalisGuideFood({
 }
 
 export const styles = StyleSheet.create({
+  guideFood: {
+    marginBottom: "-45%",
+  },
   image: {
     width: "100%",
     maxHeight: "25%",
@@ -213,21 +216,16 @@ export const styles = StyleSheet.create({
   mealDishСolumn: {
     display: "flex",
     flexDirection: "row",
-    marginHorizontal: 24,
+    justifyContent: "space-between",
+    marginHorizontal: "5%",
   },
   mealDishСolumnLast: {
     display: "flex",
-    flexDirection: "row",
-    justifyContent: "center",
+    alignItems: "center",
   },
   mealImage: {
-    maxWidth: "62%",
-    maxHeight: "70%",
-    borderRadius: 6,
-  },
-  mealImageLast: {
-    maxWidth: "100%",
-    maxHeight: "70%",
+    width: 160,
+    height: 160,
     borderRadius: 6,
   },
   mealText: {

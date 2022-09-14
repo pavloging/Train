@@ -1,10 +1,10 @@
 import { makeAutoObservable } from "mobx";
 
 class Counter {
-  name = "";
-  growth = "";
-  weight = "";
-  age = "";
+  name = null;
+  growth = 0;
+  weight = 0;
+  age = 0;
   gender = "male";
   constructor() {
     makeAutoObservable(this);

@@ -19,10 +19,10 @@ export default function TabFoodScreen({ navigation }: { navigation: any }) {
 
   function validate() {
     if (
-      counter.name !== "" &&
-      counter.growth !== "" &&
-      counter.weight !== "" &&
-      counter.age !== ""
+      counter.name !== 0 &&
+      counter.growth !== 0 &&
+      counter.weight !== 0 &&
+      counter.age !== 0
     ) {
       return true;
     } else {
@@ -47,8 +47,8 @@ export default function TabFoodScreen({ navigation }: { navigation: any }) {
               style={styleTabFoodScreen.nameInput}
               onChangeText={(text) => counter.changeName(text)}
               placeholder="Моё имя"
-              value={`${counter.name}`}
-              autoFocus={counter.name === "" && true}
+              value={`${counter.name !== null ? counter.name : ""}`}
+              autoFocus={counter.name === 0 && true}
               maxLength={14}
             />
           </TouchableOpacity>
@@ -65,7 +65,7 @@ export default function TabFoodScreen({ navigation }: { navigation: any }) {
                 keyboardType="numeric"
                 onChangeText={(text) => counter.changeGrowth(text)}
                 placeholder="160"
-                value={`${counter.growth}`}
+                value={`${counter.growth !== 0 ? counter.growth : ""}`}
                 maxLength={3}
               />
               <Text style={styleTabFoodScreen.dataTxt}>см</Text>
@@ -81,7 +81,7 @@ export default function TabFoodScreen({ navigation }: { navigation: any }) {
                 keyboardType="numeric"
                 onChangeText={(text) => counter.changeWeight(text)}
                 placeholder="80"
-                value={`${counter.weight}`}
+                value={`${counter.weight !== 0 ? counter.weight : ""}`}
                 maxLength={3}
               />
               <Text style={styleTabFoodScreen.dataTxt}>кг</Text>
@@ -97,7 +97,7 @@ export default function TabFoodScreen({ navigation }: { navigation: any }) {
                 keyboardType="numeric"
                 placeholder="50"
                 onChangeText={(text) => counter.changeAge(text)}
-                value={`${counter.age}`}
+                value={`${counter.age !== 0 ? counter.age : ""}`}
                 maxLength={2}
               />
               <Text style={styleTabFoodScreen.dataTxt}> лет</Text>
@@ -156,7 +156,7 @@ export default function TabFoodScreen({ navigation }: { navigation: any }) {
                 validate()
                   ? protein > 0
                     ? setProtein((prev) => prev - 10)
-                    : null
+                    : 0
                   : viewAlert()
               }
             />
@@ -190,7 +190,7 @@ export default function TabFoodScreen({ navigation }: { navigation: any }) {
                 validate()
                   ? water > 0
                     ? setWater((prev) => prev - 0.25)
-                    : null
+                    : 0
                   : viewAlert()
               }
             />
